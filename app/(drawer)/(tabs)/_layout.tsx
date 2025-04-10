@@ -10,7 +10,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="(stack)/index"
         options={{
-          title: "Inicio",
+          headerShown: false,
+          title: 'Inicio',
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -31,6 +32,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="buscar/index"
         options={{
+          headerShown: false,
           title: "Buscar",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="skyatlas" color={color} />
@@ -52,6 +54,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="calculadora/index"
         options={{
+          headerShown: false,
           title: "Calculadora",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="calculator" color={color} />

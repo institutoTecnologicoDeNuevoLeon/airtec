@@ -1,3 +1,4 @@
+//cspell:disable 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
@@ -13,7 +14,13 @@ module.exports = {
       },
 
       colors:{
-        primary: '#e63946'
+        primary: '#d9ed92',
+        secundary: '#415a77',
+        tercero: '#a8dadc',
+        bueno: '#d9ed92',
+        moderado: '#fad643',
+        malo: '#f26a8d',
+
       }
     },
   },
