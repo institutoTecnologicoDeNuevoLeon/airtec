@@ -20,11 +20,12 @@ const index = () => {
       </View>
     );
   }
+
   return (
-    <View style={{ alignItems: 'center', marginTop: 15 }} >
-      <Text>Calidad del aire en {city}</Text>
+    <View className="flex-1 items-center" >
+      <Text className="font-[PTSerif-BoldItalic] 3xl mt-5 text-primary">Calidad del aire en Guadalupe</Text>
       <View style={{ alignItems: 'center', marginTop: 200 }}>
-        {data && <AirQualityCard data={data} />}
+        {/*{data && <AirQualityCard data={data} />}*/}
       </View>
 
     </View>

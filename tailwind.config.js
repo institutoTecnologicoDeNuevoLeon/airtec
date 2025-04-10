@@ -4,7 +4,18 @@ module.exports = {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        PTSerif: ["./assets/fonts/PTSerif-Regular.ttf"],
+        PTSerifBold: ["./assets/fonts/PTSerif-Bold.ttf"],
+        PTSerifBoldN: ["./assets/fonts/PTSerif-BoldItalic.ttf"],
+        PTSerifItalic: ["./assets/fonts/PTSerif-Italic.ttf"],
+      },
+
+      colors:{
+        primary: '#e63946'
+      }
+    },
   },
   plugins: [],
-}
+};
