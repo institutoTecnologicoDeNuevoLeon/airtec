@@ -1,34 +1,30 @@
 //cspell:disable
-import { View, Text } from "react-native";
+// componentes/AirQualityCard.tsx
+import { View, Text, Image } from "react-native";
 import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
 
-interface Props {
-  data: any;
-}
+const AirQualityCard = ({ bgColour, iconos, iconAquiUS, sAquiUs, vAquiUs }) => {
+    return (
+        <View
+            className="flex-row items-center w-[90%] h-60 rounded-3xl mt-3 shadow-md shadow-black"
+            style={{ backgroundColor: bgColour }}
+        >
+            <Image
+                source={iconos[iconAquiUS]}
+                className="w-20 h-20 ml-10"
+                resizeMode="contain"
+            />
 
-const getWeatherIcon = (iconCode: string) => {
-  if (iconCode === "01n" || iconCode === "01d") {
-    return <Icon name="cloud" size={30} color="black" />;
-  }
-  // Puedes agregar más iconos según los códigos
-  return null;
-};
-
-const AirQualityCard = ({ data }: Props) => {
-  return (
-    <View>
-
-      <View>{getWeatherIcon(data.current.weather.ic)}</View>
-      <Text>Estado: {data.state}</Text>
-      <Text>País: {data.country}</Text>
-      <Text>Calidad del aire (AQI US): {data.current.pollution.aqius}</Text>
-      <Text>Temperatura: {data.current.weather.tp}°C</Text>
-      <Text>Humedad: {data.current.weather.hu}%</Text>
-      <Text>Presión: {data.current.weather.pr} hPa</Text>
-
-    </View>
-  );
+            <View className="flex-1 items-center">
+                <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
+                    Calidad: {sAquiUs}
+                </Text>
+                <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
+                    Valor AQI US: {vAquiUs}
+                </Text>
+            </View>
+        </View>
+    );
 };
 
 export default AirQualityCard;

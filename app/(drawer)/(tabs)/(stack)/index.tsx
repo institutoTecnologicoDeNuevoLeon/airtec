@@ -1,25 +1,28 @@
 //cspell:disable
-import { View, Text, ActivityIndicator, Image } from "react-native";
-import React, { useState, useEffect } from "react";
+// app/tabs/index.tsx
+import { View, Text, ActivityIndicator, ScrollView } from "react-native";
+import React from "react";
 import { useAirQuality } from "../../../../componentes/useAirQuality";
-import AirQualityCard from "../../../../componentes/AirQualityCard";
 import DefinirHora from "../../../../componentes/DefinirHora";
-import LottieView from "lottie-react-native";
 import Weathercard from "../../../../componentes/Weathercard";
+import AirQualityCard from "../../../../componentes/AirQualityCard";
 
 const index = () => {
   const city = "Guadalupe";
   const state = "Nuevo Leon";
   const country = "Mexico";
-  let bgColour = "white";
-  
 
   const { data, loading } = useAirQuality(city, state, country);
-  //const vAquiUs = data?.current?.pollution?.aqius;
-  const history = data?.history?.weather;
-  
-  const vAquiUs = 250;
+  const vAquiUs = data?.current?.pollution?.aqius;
+  const temperatura = data?.current?.weather.tp;
+  const hora = data?.current?.weather.ts;
+  const viento = (data?.current?.weather.ws || 0) * 3.6;
+  const vientoR = viento.toFixed(1);
+  const humedad = data?.current?.weather.hu;
+
   let sAquiUs = "Valor desconocido";
+  let bgColour = "white";
+  let iconAquiUS = "desconocido";
 
   const iconos = {
     bueno: require("../../../../assets/images/Saludable.png"),
@@ -27,29 +30,23 @@ const index = () => {
     peligroso: require("../../../../assets/images/Peligroso.png"),
   };
 
-  let iconAquiUS = "desconocido";
-
   if (vAquiUs <= 50) {
     sAquiUs = "Bueno";
     bgColour = "#99d98c";
     iconAquiUS = "bueno";
-  }
-  if (vAquiUs >= 51 && vAquiUs <= 100) {
+  } else if (vAquiUs <= 100) {
     sAquiUs = "Moderado";
     bgColour = "#ffee99";
     iconAquiUS = "moderado";
-  }
-  if (vAquiUs >= 101 && vAquiUs <= 150) {
+  } else if (vAquiUs <= 150) {
     sAquiUs = "Dañino para sensibles";
     bgColour = "#ffbf69";
     iconAquiUS = "moderado";
-  }
-  if (vAquiUs >= 151 && vAquiUs <= 200) {
+  } else if (vAquiUs <= 200) {
     sAquiUs = "Malo";
     bgColour = "#f4978e";
     iconAquiUS = "peligroso";
-  }
-  if (vAquiUs >= 201 && vAquiUs <= 500) {
+  } else if (vAquiUs <= 500) {
     sAquiUs = "Peligroso";
     bgColour = "#c8b6ff";
     iconAquiUS = "peligroso";
@@ -58,50 +55,40 @@ const index = () => {
   if (loading) {
     return (
       <View className="flex-1 justify-center items-center">
-        <Text>Cargando datos</Text>
-        <ActivityIndicator size={"large"} />
+        <Text>Cargando datos...</Text>
+        <ActivityIndicator size="large" />
       </View>
     );
   }
 
   return (
-    <View className="flex-1 items-center justify-center">
-      {/*Ciudad*/}
+    <ScrollView contentContainerStyle={{ alignItems: "center", marginTop: 50 }}>
+
       <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
         Guadalupe
       </Text>
 
-      {/*Hora*/}
       <Text className="text-sm">
         <DefinirHora />
       </Text>
 
-      {/*Datos*/}
-      <View
-        className="flex-row items-center  w-[90%] h-60 rounded-3xl mt-3 shadow-md shadow-black"
-        style={{ backgroundColor: bgColour }}
-      >
-        <Image source={iconos[iconAquiUS]} className="w-20 h-20 ml-10" />
-        <View className="flex-1 items-center">
-          <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
-            Calidad: {sAquiUs}
-          </Text>
-          <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
-            Valor AQI US: {vAquiUs}
-          </Text>
-          <Text>Temperatura: {data?.current?.weather.tp}°C</Text>
-          
-        </View>
-        
+      <AirQualityCard
+        bgColour={bgColour}
+        iconos={iconos}
+        iconAquiUS={iconAquiUS}
+        sAquiUs={sAquiUs}
+        vAquiUs={vAquiUs}
+      />
+
+      <View className="w-[90%] h-20 rounded-3xl mt-3 shadow-black shadow-md bg-white">
+        <Weathercard
+          temperatura={temperatura}
+          humedad={humedad}
+          hora={hora}
+          viento={vientoR}
+        />
       </View>
-
-        <View className="w-[90%] h-20 rounded-3xl mt-3 shadow-black shadow-md bg-white">
-            <Weathercard/>
-        </View>
-      <View>{/*{data && <AirQualityCard data={data} />}*/}</View>
-      
-
-    </View>
+    </ScrollView>
   );
 };
 
