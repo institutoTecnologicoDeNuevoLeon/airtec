@@ -5,15 +5,19 @@ import { useAirQuality } from "../../../../componentes/useAirQuality";
 import AirQualityCard from "../../../../componentes/AirQualityCard";
 import DefinirHora from "../../../../componentes/DefinirHora";
 import LottieView from "lottie-react-native";
+import Weathercard from "../../../../componentes/Weathercard";
 
 const index = () => {
   const city = "Guadalupe";
   const state = "Nuevo Leon";
   const country = "Mexico";
   let bgColour = "white";
+  
 
   const { data, loading } = useAirQuality(city, state, country);
   //const vAquiUs = data?.current?.pollution?.aqius;
+  const history = data?.history?.weather;
+  
   const vAquiUs = 250;
   let sAquiUs = "Valor desconocido";
 
@@ -63,12 +67,12 @@ const index = () => {
   return (
     <View className="flex-1 items-center justify-center">
       {/*Ciudad*/}
-      <Text className="font-[PTSerif-Bold] text-3xl  mt-10 text-black p-3 tracking-extra">
+      <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
         Guadalupe
       </Text>
 
       {/*Hora*/}
-      <Text className="mt-3 text-sm">
+      <Text className="text-sm">
         <DefinirHora />
       </Text>
 
@@ -85,16 +89,18 @@ const index = () => {
           <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
             Valor AQI US: {vAquiUs}
           </Text>
+          <Text>Temperatura: {data?.current?.weather.tp}°C</Text>
+          
         </View>
+        
       </View>
 
+        <View className="w-[90%] h-20 rounded-3xl mt-3 shadow-black shadow-md bg-white">
+            <Weathercard/>
+        </View>
       <View>{/*{data && <AirQualityCard data={data} />}*/}</View>
-      <View>
-        <Image
-          source={require("../../../../assets/images/CalidadAire.jpeg")}
-          style={{ width: 350, height: 160, borderRadius: 20, marginTop: 10 }}
-        />
-      </View>
+      
+
     </View>
   );
 };
