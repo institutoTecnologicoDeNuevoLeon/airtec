@@ -14,7 +14,7 @@ const DefinirHora = () => {
     }, []);
 
     return (
-        <Text className="text-black text-lg mt-3">
+        <Text className="text-black text-lg">
             {hora.toLocaleTimeString([],{hour: '2-digit', minute: '2-digit'})}
         </Text>
     );

@@ -5,6 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Slot } from 'expo-router';
 import '../global';
 import { useFonts } from 'expo-font';
+import LottieView from 'lottie-react-native';
 
 const _layout = () => {
   const [fontsLoaded, error] = useFonts({
@@ -19,16 +20,29 @@ const _layout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading || !fontsLoaded) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" color="black" />
-        <Text>Cargando...</Text>
+      <View className='flex-1 justify-center items-center bg-fondo1'>
+        <LottieView 
+          source={require("../assets/iconos-Animados/Animation - 1744182723823.json")} 
+          autoPlay
+          loop
+          resizeMode='cover'
+          style={{width:120, height:120}}
+          />
+        <Text
+          className='font-[PTSerif-BoldItalic] mt-1 text-2xl'>
+            AirTec
+        </Text>
+        <Text
+          className='font-[PTSerif-BoldItalic] mt-1 text-bs'>
+            Institulo Tecnológico de Nuevo León
+        </Text>
       </View>
     );
   }

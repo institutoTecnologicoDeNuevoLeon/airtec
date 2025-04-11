@@ -14,13 +14,30 @@ module.exports = {
       },
 
       colors:{
-        primary: '#d9ed92',
+        primary: '#b7efc5',
         secundary: '#415a77',
         tercero: '#a8dadc',
         bueno: '#d9ed92',
         moderado: '#fad643',
         malo: '#f26a8d',
 
+        fondo1: 'white',
+
+        Bueno: '#13c710',
+        Moderado: '#fdf00b',
+        DañinoSensibles: '#f1660b',
+        NoSaludable: '#ea1222',
+        CasiPeligroso: '#8468e1',
+        Peligroso: '#393939',
+
+        
+
+
+      },
+
+      letterSpacing: {
+        'extra': '.15em',
+        'minExtra': '.05em',
       }
     },
   },
