@@ -6,13 +6,12 @@ import React from "react";
 const AirQualityCard = ({ bgColour, iconos, iconAquiUS, sAquiUs, vAquiUs }) => {
     return (
         <View
-            className="flex-row items-center w-[90%] h-60 rounded-3xl mt-3 shadow-md shadow-black"
+            className="flex-row items-center w-[90%] rounded-3xl mt-3 shadow-md shadow-black"
             style={{ backgroundColor: bgColour }}
         >
             <Image
                 source={iconos[iconAquiUS]}
-                className="w-20 h-20 ml-10"
-                resizeMode="contain"
+                style={{ width: 80, height: 80, marginTop: 10, marginBottom: 10,}} // ajusta los valores a tu gusto
             />
 
             <View className="flex-1 items-center">

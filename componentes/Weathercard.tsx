@@ -9,7 +9,8 @@ const Weathercard = ({temperatura, humedad, hora, viento}) => {
     const dia = horaActual >= 6 && horaActual < 18 ;
   
     return (
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', 
+            padding: 10, backgroundColor: '#fbfbf2', borderRadius:20}}>
 
           {/* Primer icono y su dato */}
           <View style={{ alignItems: 'center' }}>

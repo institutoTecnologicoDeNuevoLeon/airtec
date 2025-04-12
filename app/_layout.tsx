@@ -28,20 +28,20 @@ const _layout = () => {
   if (isLoading || !fontsLoaded) {
     return (
       <View className='flex-1 justify-center items-center bg-fondo1'>
-        <LottieView 
-          source={require("../assets/iconos-Animados/Animation - 1744182723823.json")} 
+        <LottieView
+          source={require("../assets/iconos-Animados/Animation - 1744182723823.json")}
           autoPlay
           loop
           resizeMode='cover'
-          style={{width:120, height:120}}
-          />
+          style={{ width: 120, height: 120 }}
+        />
         <Text
           className='font-[PTSerif-BoldItalic] mt-1 text-2xl'>
-            AirTec
+          AirTec
         </Text>
         <Text
           className='font-[PTSerif-BoldItalic] mt-1 text-bs'>
-            Institulo Tecnológico de Nuevo León
+          Institulo Tecnológico de Nuevo León
         </Text>
       </View>
     );

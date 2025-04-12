@@ -1,18 +1,28 @@
 //cspell:disable
-// app/tabs/index.tsx
-import { View, Text, ActivityIndicator, ScrollView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import { View, Text, ActivityIndicator, ScrollView, Button, Pressable } from "react-native";
 import { useAirQuality } from "../../../../componentes/useAirQuality";
 import DefinirHora from "../../../../componentes/DefinirHora";
 import Weathercard from "../../../../componentes/Weathercard";
 import AirQualityCard from "../../../../componentes/AirQualityCard";
 
-const index = () => {
+const Index = () => {
   const city = "Guadalupe";
   const state = "Nuevo Leon";
   const country = "Mexico";
 
-  const { data, loading } = useAirQuality(city, state, country);
+  const [shouldFetch, setShouldFetch] = useState(false);
+
+  const { data, loading } = useAirQuality(city, state, country, shouldFetch);
+
+  if (shouldFetch && data && !loading) {
+    setShouldFetch(false);
+  }
+
+  const handleFetchData = () => {
+    setShouldFetch(true);
+  };
+
   const vAquiUs = data?.current?.pollution?.aqius;
   const temperatura = data?.current?.weather.tp;
   const hora = data?.current?.weather.ts;
@@ -52,44 +62,52 @@ const index = () => {
     iconAquiUS = "peligroso";
   }
 
-  if (loading) {
-    return (
-      <View className="flex-1 justify-center items-center">
-        <Text>Cargando datos...</Text>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
-
   return (
-    <ScrollView contentContainerStyle={{ alignItems: "center", marginTop: 50 }}>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View className="flex-1 justify-center items-center">
+        <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
+          Guadalupe
+        </Text>
 
-      <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
-        Guadalupe
-      </Text>
+        <Text className="text-sm">
+          <DefinirHora />
+        </Text>
 
-      <Text className="text-sm">
-        <DefinirHora />
-      </Text>
+        <Pressable className="px-5 py-3 rounded-tl-3xl rounded-br-3xl bg-fondo2 m-3 shadow-lg shadow-black" onPress={handleFetchData}>
+          <Text className="text-2xl color-white font-[PTSerif-Regular] tracking-extra">Actualizar datos</Text>
+        </Pressable>
 
-      <AirQualityCard
-        bgColour={bgColour}
-        iconos={iconos}
-        iconAquiUS={iconAquiUS}
-        sAquiUs={sAquiUs}
-        vAquiUs={vAquiUs}
-      />
 
-      <View className="w-[90%] h-20 rounded-3xl mt-3 shadow-black shadow-md bg-white">
-        <Weathercard
-          temperatura={temperatura}
-          humedad={humedad}
-          hora={hora}
-          viento={vientoR}
-        />
+        {loading ? (
+          <View className="flex-1 justify-center items-center">
+            <Text>Cargando datos...</Text>
+            <ActivityIndicator size="large" />
+          </View>
+        ) : data ? (
+          <>
+            <AirQualityCard
+              bgColour={bgColour}
+              iconos={iconos}
+              iconAquiUS={iconAquiUS}
+              sAquiUs={sAquiUs}
+              vAquiUs={vAquiUs}
+            />
+
+            <View className="w-[90%] h-30 rounded-3xl mt-3 shadow-black shadow-md bg-white">
+              <Weathercard
+                temperatura={temperatura}
+                humedad={humedad}
+                hora={hora}
+                viento={vientoR}
+              />
+            </View>
+          </>
+        ) : (
+          <Text className="text-sm">Genera nueva información</Text>
+        )}
       </View>
     </ScrollView>
   );
 };
 
-export default index;
+export default Index;

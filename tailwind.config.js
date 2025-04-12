@@ -22,6 +22,7 @@ module.exports = {
         malo: '#f26a8d',
 
         fondo1: 'white',
+        fondo2: '#0077b6',
 
         Bueno: '#13c710',
         Moderado: '#fdf00b',
