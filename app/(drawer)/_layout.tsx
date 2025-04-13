@@ -14,36 +14,36 @@ const DrawerLayout = () => {
       <Drawer
         drawerContent={CustomerDrawerLayout}
         screenOptions={{
-            drawerActiveBackgroundColor: "#dee2e6",
-            drawerActiveTintColor: '#023e8a',
-            headerTitleAlign: 'center',
-            headerTintColor: "#495057",
-                
-                headerStyle: {
-                    backgroundColor: "#ced4da",
-                },
-          
-                drawerStyle:{
-                    backgroundColor: '#adb5bd'
-                },
+          drawerActiveBackgroundColor: "#dee2e6",
+          drawerActiveTintColor: '#023e8a',
+          headerTitleAlign: 'center',
+          headerTintColor: "#495057",
 
-                headerTitleStyle: {
-                    fontFamily: "PTSerif-BoldItalic",
-                    fontSize: 25,
-                    letterSpacing: 5,
-                },
-                
-                headerLeft: () => {
-                    const navigation = useNavigation();
-                    return (
-                    <TouchableOpacity
-                        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer()) }
-                        style={{ marginLeft: 15 }}>
+          headerStyle: {
+            backgroundColor: "#ced4da",
+          },
+
+          drawerStyle: {
+            backgroundColor: '#adb5bd'
+          },
+
+          headerTitleStyle: {
+            fontFamily: "PTSerif-BoldItalic",
+            fontSize: 25,
+            letterSpacing: 5,
+          },
+
+          headerLeft: () => {
+            const navigation = useNavigation();
+            return (
+              <TouchableOpacity
+                onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+                style={{ marginLeft: 15 }}>
                 {/* <Image 
                                     source={require('../../assets/images/menu-de-hamburguesas.png')}
                                     style={{width:30, height:30 }}
                                     /> */}
-                            <Ionicons name="grid" size={24} color={"#495057"}></Ionicons>
+                <Ionicons name="grid" size={24} color={"#495057"}></Ionicons>
               </TouchableOpacity>
             );
           },
@@ -56,7 +56,7 @@ const DrawerLayout = () => {
             title: "AirTec",
             // drawerItemStyle: { display: 'none' },
             drawerIcon: ({ focused, size, color }) => (
-                <Ionicons name="home" size={20} style={{ paddingLeft: 2 }} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
+              <Ionicons name="home" size={20} style={{ paddingLeft: 2 }} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
             ),
           }}
         />
@@ -65,8 +65,8 @@ const DrawerLayout = () => {
           options={{
             drawerLabel: "Acerca",
             title: "Acerca",
-            drawerIcon: ({ focused,size, color }) => (
-                <Ionicons name="information-circle-outline" size={24} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
+            drawerIcon: ({ focused, size, color }) => (
+              <Ionicons name="information-circle-outline" size={24} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
             ),
           }}
         />
@@ -74,10 +74,10 @@ const DrawerLayout = () => {
         <Drawer.Screen
           name="contacto/index" // This is the name of the page and must match the url from root
           options={{
-            drawerLabel: "Contacto",
-            title: "Contacto",
+            drawerLabel: "Ayuda",
+            title: "Ayuda",
             drawerIcon: ({ focused, size, color }) => (
-                <Ionicons name="call" size={20} style={{ paddingLeft: 2 }} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
+              <Ionicons name="call" size={20} style={{ paddingLeft: 2 }} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
             ),
           }}
         />

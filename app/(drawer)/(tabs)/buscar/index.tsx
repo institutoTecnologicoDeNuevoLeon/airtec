@@ -44,52 +44,57 @@ const consulta = () => {
     }
   }
 
-
-
   return (
-    <View className='flex-1 justify-center items-center'>
+    <View className='items-center mt-10'>
       <Text>Revisa la ciudad a revisar</Text>
 
-      <Text>Ciudad:</Text>
-      <TextInput
-        value={city}
-        onChangeText={setCity}
-        placeholder='Ingresa la ciudad'
-      />
+      <View className='flex-2 justify-center mt-24'>
 
-      <Text>Estado</Text>
-      <TextInput
-        value={state}
-        onChangeText={setState}
-        placeholder='Ingresa el estado'
-      />
-      <Text>Pais</Text>
-      <TextInput
-        value={country}
-        onChangeText={setCountry}
-        placeholder='Ingresa el país'
-      />
 
-      <Button title='Consultar' onPress={fetchAirQuality} />
 
-      {data && (
-        <View>
+        <Text>Pais</Text>
+        <TextInput
+          value={country}
+          onChangeText={setCountry}
+          placeholder='Ingresa el país'
+        />
 
+        <Text>Estado</Text>
+        <TextInput
+          value={state}
+          onChangeText={setState}
+          placeholder='Ingresa el estado'
+        />
+
+
+        <Text>Ciudad:</Text>
+        <TextInput
+          value={city}
+          onChangeText={setCity}
+          placeholder='Ingresa la ciudad'
+        />
+
+        <Button title='Consultar' onPress={fetchAirQuality} />
+
+        {data && (
           <View>
-            {getWeatherIcon(data.current.weather.ic)}
+
+            <View>
+              {getWeatherIcon(data.current.weather.ic)}
+            </View>
+
+            <Text>Ciudad: {data.city}</Text>
+            <Text>Estado: {data.state}</Text>
+            <Text>País: {data.country}</Text>
+            <Text>Calidad del aire (AQI US): {data.current.pollution.aqius}</Text>
+            <Text>Temperatura: {data.current.weather.tp}°C</Text>
+            <Text>Humedad: {data.current.weather.hu}%</Text>
+            <Text>Presión: {data.current.weather.pr} hPa</Text>
+
+
           </View>
-
-          <Text>Ciudad: {data.city}</Text>
-          <Text>Estado: {data.state}</Text>
-          <Text>País: {data.country}</Text>
-          <Text>Calidad del aire (AQI US): {data.current.pollution.aqius}</Text>
-          <Text>Temperatura: {data.current.weather.tp}°C</Text>
-          <Text>Humedad: {data.current.weather.hu}%</Text>
-          <Text>Presión: {data.current.weather.pr} hPa</Text>
-
-
-        </View>
-      )}
+        )}
+      </View>
     </View>
   )
 }

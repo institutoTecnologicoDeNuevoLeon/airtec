@@ -71,6 +71,30 @@ export default function TabLayout() {
             );
           },
         }}
+
+      />
+
+      <Tabs.Screen
+        name="informacion/index"
+        options={{
+          headerShown: false,
+          title: "Más información",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="info" color={color} />
+          ),
+          tabBarButton: (props) => {
+            return (
+              <TouchableOpacity
+                {...props}
+                onPress={() => {
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                  (props.onPress as any)();
+                }}
+              />
+            );
+          },
+        }}
+
       />
     </Tabs>
   );
