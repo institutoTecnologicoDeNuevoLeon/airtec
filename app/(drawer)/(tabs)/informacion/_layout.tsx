@@ -17,7 +17,6 @@ export default function Layout() {
             <Stack.Screen name="index" options={{
                 headerTitle: 'Más información',
                 headerBackTitle: 'Regresar',
-
             }} />
 
         </Stack>
