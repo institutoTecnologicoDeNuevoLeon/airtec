@@ -10,7 +10,12 @@ export default function Layout() {
             }}
         >
             <Stack.Screen name="AqiUsScreen" options={{
-                headerTitle: 'Holas',
+                headerTitle: 'Indice AQI(US)',
+                headerBackTitle: 'Regresar',
+
+            }} />
+            <Stack.Screen name="index" options={{
+                headerTitle: 'Más información',
                 headerBackTitle: 'Regresar',
 
             }} />

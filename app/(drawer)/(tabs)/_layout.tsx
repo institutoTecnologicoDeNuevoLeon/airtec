@@ -81,7 +81,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="informacion"
         options={{
-          headerShown: true,
+          headerShown: false,
           title: "Más información",
           tabBarActiveTintColor: '#000',
           tabBarIcon: ({ color }) => (
