@@ -15,7 +15,7 @@ const InformationCard = () => {
                     <Text className='text-2xl font-[PTSerif-BoldItalic]'>AirTec</Text>
                 </View>
                 <View className='w-1/2 pl-3'>
-                    <Image source={require('../assets/images/aire-limpio.png')}
+                    <Image source={require('../../assets/images/iconosClima/aire-limpio.png')}
                     style = {{width:40 , height:40}}/>
                 </View>
             </View>

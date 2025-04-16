@@ -16,10 +16,10 @@ const Weathercard = ({temperatura, humedad, hora, viento}) => {
           <View style={{ alignItems: 'center' }}>
               
               {dia ?(
-                  <Image source={require('../assets/images/dom.png')} style={{ width: 30, height: 30 }} />
+                  <Image source={require('../../assets/images/iconosClima/sol.png')} style={{ width: 30, height: 30 }} />
 
               ):(
-                    <Image source={require('../assets/images/luna-llena.png')} style={{ width: 30, height: 30 }} />
+                    <Image source={require('../../assets/images/iconosClima/luna-llena.png')} style={{ width: 30, height: 30 }} />
 
               )}
               <Text>{temperatura} C°</Text>
@@ -27,13 +27,13 @@ const Weathercard = ({temperatura, humedad, hora, viento}) => {
 
           {/* Tercer icono y su dato */}
           <View style={{ alignItems: 'center' }}>
-              <Image source={require('../assets/images/viento.png')} style={{ width: 30, height: 30 }} />
+              <Image source={require('../../assets/images/iconosClima/viento.png')} style={{ width: 30, height: 30 }} />
               <Text>{viento} km/h</Text>
           </View>
 
           {/* Segundo icono y su dato */}
           <View style={{ alignItems: 'center' }}>
-              <Image source={require('../assets/images/gotas (1).png')} style={{ width: 30, height: 30 }} />
+              <Image source={require('../../assets/images/iconosClima/gotas.png')} style={{ width: 30, height: 30 }} />
               <Text>{humedad} %</Text>
           </View>
       </View>

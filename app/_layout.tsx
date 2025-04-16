@@ -30,7 +30,7 @@ const _layout = () => {
     return (
       <ImageBackground
         className="flex-1 justify-center items-center bg-fondo1"
-        source={require("../assets/images/ghibiTec.png")}
+        source={require("../assets/images/fondos/ghibiTec.png")}
         imageStyle={{ opacity: 0.8 }}
       >
         <LottieView

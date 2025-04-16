@@ -28,6 +28,12 @@ module.exports = {
         fondo2: '#0077b6',
         fondo3: '#7d8597',
         fondo4: '#dee2e6',
+        fondo5: '#1f7a8c',
+        fondo6: '#6096ba',
+        
+
+        boton: '#184e77',
+        boton2: '#e7ecef',
 
         bueno: '#13c710',
         moderado: '#fdf00b',
@@ -42,6 +48,7 @@ module.exports = {
       letterSpacing: {
         'extra': '.15em',
         'minExtra': '.05em',
+        'maxExtra': '.25em',
       }
     },
   },

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { View, Text, ActivityIndicator, ScrollView, Button, Pressable } from "react-native";
 import { useAirQuality } from "../../../../componentes/useAirQuality";
 import DefinirHora from "../../../../componentes/DefinirHora";
-import Weathercard from "../../../../componentes/Weathercard";
-import AirQualityCard from "../../../../componentes/AirQualityCard";
+import Weathercard from "../../../../componentes/cardsInformation/Weathercard";
+import AirQualityCard from "../../../../componentes/cardsInformation/AirQualityCard";
 
 const Index = () => {
   const city = "Guadalupe";
@@ -35,9 +35,9 @@ const Index = () => {
   let iconAquiUS = "desconocido";
 
   const iconos = {
-    bueno: require("../../../../assets/images/Saludable.png"),
-    moderado: require("../../../../assets/images/Moderado.png"),
-    peligroso: require("../../../../assets/images/Peligroso.png"),
+    bueno: require("../../../../assets/images/iconosPersonas/Saludable.png"),
+    moderado: require("../../../../assets/images/iconosPersonas/Moderado.png"),
+    peligroso: require("../../../../assets/images/iconosPersonas/Peligroso.png"),
   };
 
   if (vAquiUs <= 50) {

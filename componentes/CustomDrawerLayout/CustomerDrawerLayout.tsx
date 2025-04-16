@@ -13,7 +13,7 @@ export default function CustomerDrawerLayout(props: any) {
                 {/* header */}
                 <View>
                     <Image
-                        source={require('../../assets/images/itnllogo.png')}
+                        source={require('../../assets/images/itnl/itnllogo.png')}
                         style={{ width: 300, height: 150, borderRadius: 30, marginBottom: 20 }}
                     />
                 </View>
