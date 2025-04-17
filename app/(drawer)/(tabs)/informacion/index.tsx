@@ -11,11 +11,12 @@ export const unstable_settings = {
 export default function IndexScreen() {
   return (
     <ScrollView>
-      <View className="mt-10">
+      <View className="mt-5">
         <View className="items-center mb-1">
           <Pressable
             className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"
-            onPress={() => router.push("/informacion/AqiUsScreen")}>
+            onPress={() => router.push("/informacion/AqiUsScreen")}
+          >
             <Text className="text-3xl font-[PTSerif-Bold">Valores AQI(US)</Text>
           </Pressable>
         </View>
@@ -23,9 +24,12 @@ export default function IndexScreen() {
         <View style={{ width: "100%" }}>
           <View className="flex-row p-5 pt-1">
             {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-red-200 justify-center h-32 rounded-lg">
+            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
               <Pressable>
-                <Text className="text-xl font-[PTSerif-Bold]">
+                <Text
+                  className="text-xl font-[PTSerif-Bold]"
+                  onPress={() => router.push("/informacion/AqiPm25Screen")}
+                >
                   AQIUS con PM2.5
                 </Text>
               </Pressable>
@@ -35,8 +39,10 @@ export default function IndexScreen() {
             <View style={{ width: 8, backgroundColor: "white" }} />
 
             {/* Derecha: PM10 */}
-            <View className="flex-1 items-center bg-green-400 justify-center h-32 rounded-lg">
-              <Pressable>
+            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
+              <Pressable
+                onPress={() => router.push("/informacion/AqiPm10Screen")}
+              >
                 <Text className="text-xl font-[PTSerif-Bold]">
                   AQIUS con PM10
                 </Text>
@@ -48,8 +54,10 @@ export default function IndexScreen() {
         <View style={{ width: "100%" }}>
           <View className="flex-row p-5 pt-1">
             {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-red-200 justify-center h-32 rounded-lg">
-              <Pressable>
+            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
+              <Pressable
+                onPress={() => router.push("/informacion/AqiSo2Screen")}
+              >
                 <Text className="text-xl font-[PTSerif-Bold]">
                   AQIUS con SO₂
                 </Text>
@@ -59,9 +67,11 @@ export default function IndexScreen() {
             {/* Separador blanco de 8px */}
             <View style={{ width: 8, backgroundColor: "white" }} />
 
-            {/* Derecha: PM10 */}
-            <View className="flex-1 items-center bg-green-400 justify-center h-32 rounded-lg">
-              <Pressable>
+            {/* Derecha: NO2 */}
+            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
+              <Pressable
+                onPress={() => router.push("/informacion/AqiNo2Screen")}
+              >
                 <Text className="text-xl font-[PTSerif-Bold]">
                   AQIUS con NO₂
                 </Text>
@@ -73,8 +83,10 @@ export default function IndexScreen() {
         <View style={{ width: "100%" }}>
           <View className="flex-row p-5 pt-1">
             {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-red-200 justify-center h-32 rounded-lg">
-              <Pressable>
+            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
+              <Pressable
+                onPress={() => router.push("/informacion/AqiO3Screen")}
+              >
                 <Text className="text-xl font-[PTSerif-Bold]">
                   AQIUS con O₃
                 </Text>
@@ -85,8 +97,10 @@ export default function IndexScreen() {
             <View style={{ width: 8, backgroundColor: "white" }} />
 
             {/* Derecha: PM10 */}
-            <View className="flex-1 items-center bg-green-400 justify-center h-32 rounded-lg">
-              <Pressable>
+            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
+              <Pressable
+                onPress={() => router.push("/informacion/AqiCoScreen")}
+              >
                 <Text className="text-xl font-[PTSerif-Bold]">
                   AQIUS con CO
                 </Text>
@@ -97,9 +111,7 @@ export default function IndexScreen() {
 
         <View className="items-center mb-1">
           <Pressable
-            className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"
-            onPress={() => router.push("/informacion/AqiUsScreen")}
-          >
+            className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"       >
             <Text className="text-3xl font-[PTSerif-Bold">
               Recomendaciones generales
             </Text>

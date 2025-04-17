@@ -14,7 +14,7 @@ export default function CustomerDrawerLayout(props: any) {
                 <View>
                     <Image
                         source={require('../../assets/images/itnl/itnllogo.png')}
-                        style={{ width: 300, height: 150, borderRadius: 30, marginBottom: 20 }}
+                        style={{ width: 300, height: 150, borderRadius: 30, marginBottom: 20, marginTop: 20 }}
                     />
                 </View>
                 <DrawerItemList {...props} />
@@ -28,7 +28,7 @@ export default function CustomerDrawerLayout(props: any) {
                 padding: 20,
                 paddingBottom: 20,
             }}>
-                <Text>Footer</Text>
+                <Text className="font-[PTSerif-Italic]">Version 1 . 0 . 0</Text>
             </View>
         </View>
     )

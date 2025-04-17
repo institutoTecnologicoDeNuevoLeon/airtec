@@ -85,7 +85,7 @@ export default function TabLayout() {
           title: "Más información",
           tabBarActiveTintColor: '#000',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+            <FontAwesome size={28} name="info" color={color} />
           ),
           tabBarButton: (props) => {
             return (

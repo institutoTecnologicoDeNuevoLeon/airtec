@@ -21,11 +21,32 @@ const ContaminanteCard = ({ tipo, placeholder }: Props) => {
         }
     };
 
+
+    let uMedida = '';
+    if (tipo === 'PM2.5' || tipo === 'PM10') {
+        uMedida = '(µg/m³)'
+    }
+    if (tipo === 'SO2' || tipo === 'NO2' || tipo === 'O3' || tipo === 'CO') {
+        uMedida = '(ppm)'
+    }
+
+    if(tipo === 'SO2'){
+        tipo = 'SO₂'
+    }
+
+    if (tipo === 'NO2') {
+        tipo = 'NO₂'
+    }
+
+    if (tipo === 'O3') {
+        tipo = 'O₃'
+    }
+
     return (
         <View className="max-w-96 mt-5">
             <View className="items-center mr-2 bg-fondo4 rounded-2xl shadow-black" style={{ elevation: 10 }}>
                 <View className="my-3">
-                    <Text className="text-lg font-[PTSerif-Bold]">{tipo} (µg/m³)</Text>
+                    <Text className="text-lg font-[PTSerif-Bold]">{tipo} {uMedida}</Text>
                 </View>
                 <View className="flex-row">
                     <View className="w-1/2 h-20 items-center justify-center bg-fondo4 border-fondo3">
