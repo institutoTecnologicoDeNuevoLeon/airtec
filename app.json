@@ -1,26 +1,44 @@
 {
   "expo": {
-    "name": "clima-04",
+    "name": "Airtec",
     "slug": "clima-04",
     "scheme": "climaapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/iconosClima/aire-limpio.png",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "ligth",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/iconosClima/aire-limpio.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000"
+      "backgroundColor": "#fff"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["INTERNET"],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/iconosClima/viento.png",
-        "backgroundColor": "#000"
-      }
+        "foregroundImage": "./assets/images/iconosClima/aire-limpio.png",
+        "backgroundColor": "#34a0a4"
+      },
+      "package": "com.milo940707.clima04",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https"
+          },
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https"
+          },
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/images/iconosClima/luna-llena.png",
@@ -29,6 +47,14 @@
     "plugins": [
       "expo-router",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fa9d4040-8189-4cf5-850d-b351803de433"
+      }
+    }
   }
 }

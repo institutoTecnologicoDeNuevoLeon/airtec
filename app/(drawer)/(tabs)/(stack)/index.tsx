@@ -23,6 +23,8 @@ const Index = () => {
     setShouldFetch(true);
   };
 
+  //const vAquiUs = 43;
+  //const vAquiUs = 180;
   const vAquiUs = data?.current?.pollution?.aqius;
   const temperatura = data?.current?.weather.tp;
   const hora = data?.current?.weather.ts;
@@ -73,7 +75,10 @@ const Index = () => {
           <DefinirHora />
         </Text>
 
-        <Pressable className="px-5 py-3 rounded-tl-3xl rounded-br-3xl bg-fondo2 m-3 shadow-lg shadow-black" onPress={handleFetchData}>
+        <Pressable
+          className="px-5 py-3 rounded-3xl bg-fondo2 m-3 shadow-lg shadow-black
+                      border-2 border-fondo7 elevation-2xl"
+          onPress={handleFetchData}>
           <Text className="text-2xl color-white font-[PTSerif-Regular] tracking-extra">Actualizar datos</Text>
         </Pressable>
 
@@ -103,7 +108,7 @@ const Index = () => {
             </View>
           </>
         ) : (
-          <Text className="text-sm">Genera nueva información</Text>
+          <Text className="text-lg"></Text>
         )}
       </View>
     </ScrollView>

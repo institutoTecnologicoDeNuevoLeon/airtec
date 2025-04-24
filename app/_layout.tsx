@@ -6,7 +6,8 @@ import { Slot } from "expo-router";
 import "../global";
 import { useFonts } from "expo-font";
 import LottieView from "lottie-react-native";
-import { opacity } from "react-native-reanimated/lib/typescript/Colors";
+import * as SplashScreen from "expo-splash-screen";
+
 
 const _layout = () => {
   const [fontsLoaded, error] = useFonts({
@@ -19,9 +20,9 @@ const _layout = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = setTimeout( () => {
       setIsLoading(false);
-    }, 300);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -41,11 +42,11 @@ const _layout = () => {
           style={{ width: 120, height: 120 }}
         />
         <View className="items-center p-2 rounded-2xl" style={{ backgroundColor: 'rgba(255,255,255,0.6)' }}>
-        
-        <Text className="font-[PTSerif-BoldItalic] mt-1 text-3xl">AirTec</Text>
-        <Text className="font-[PTSerif-BoldItalic] mt-1 text-xl">
-          Institulo Tecnológico de Nuevo León
-        </Text>
+
+          <Text className="font-[PTSerif-BoldItalic] mt-1 text-3xl">AirTec</Text>
+          <Text className="font-[PTSerif-BoldItalic] mt-1 text-xl">
+            Institulo Tecnológico de Nuevo León
+          </Text>
         </View>
       </ImageBackground>
     );

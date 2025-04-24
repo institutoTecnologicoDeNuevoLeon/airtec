@@ -30,17 +30,7 @@ const ContaminanteCard = ({ tipo, placeholder }: Props) => {
         uMedida = '(ppm)'
     }
 
-    if(tipo === 'SO2'){
-        tipo = 'SO₂'
-    }
-
-    if (tipo === 'NO2') {
-        tipo = 'NO₂'
-    }
-
-    if (tipo === 'O3') {
-        tipo = 'O₃'
-    }
+    
 
     return (
         <View className="max-w-96 mt-5">
@@ -69,21 +59,15 @@ const ContaminanteCard = ({ tipo, placeholder }: Props) => {
                     </View>
                 </View>
 
-                <View className="flex-row">
-                    <View className="w-1/2 items-center">
+                <View className="w-full border-t-2 border-fondo3">
+                    <View className="items-center">
                         <Pressable className="py-5" onPress={calcular}>
                             <View className="w-24 h-16 items-center justify-center rounded-full bg-fondo6">
                                 <Ionicons size={30} name="calculator-outline" color="white" />
                             </View>
                         </Pressable>
                     </View>
-                    <View className="w-1/2 items-center">
-                        <Pressable className="py-5">
-                            <View className="w-24 h-16 items-center justify-center rounded-full bg-fondo6">
-                                <Ionicons size={30} name="shield-checkmark-outline" color="white" />
-                            </View>
-                        </Pressable>
-                    </View>
+                    
                 </View>
             </View>
         </View>

@@ -1,10 +1,10 @@
 //cspell:disable 
 import { Stack } from 'expo-router';
-import { Button } from 'react-native';
 
 export default function Layout() {
     return (
         <Stack
+            initialRouteName="index"
             screenOptions={{
                 headerBackTitle: 'Regresar',
             }}
@@ -17,6 +17,11 @@ export default function Layout() {
             <Stack.Screen name="index" options={{
                 headerTitle: 'Más información',
                 headerBackTitle: 'Regresar',
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    fontFamily: 'PTSerif-Bold',
+                    fontSize: 24
+                }
             }} />
 
             <Stack.Screen name="AqiPm25Screen" options={{

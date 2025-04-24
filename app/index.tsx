@@ -7,7 +7,7 @@ const index = () => {
   return (
     //<Redirect href={'./(drawer)/(tabs)'} />
     //<Redirect href={'./(drawer)/acerca'} />
-    <Redirect href={'./(drawer)/(tabs)/informacion'} />
+    <Redirect href={'./(drawer)/(tabs)/(stack)'} />
 
   )
 }

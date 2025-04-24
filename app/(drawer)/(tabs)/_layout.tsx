@@ -6,13 +6,21 @@ import { Pressable, TouchableOpacity, TouchableWithoutFeedback } from "react-nat
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs 
+      screenOptions={{ 
+        headerTitleAlign: 'center',
+        headerShown: true,
+        tabBarActiveTintColor: '#000',
+        tabBarShowLabel: false,
+        headerTitleStyle: {
+          fontFamily: 'PTSerif-Bold',
+          fontSize: 24,
+        }
+        }}>
       <Tabs.Screen
         name="(stack)/index"
         options={{
-          headerShown: true,
           title: 'Inicio',
-          tabBarActiveTintColor: '#000',
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -32,11 +40,10 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="buscar/index"
+        name="buscar"
         options={{
-          headerShown: true,
           title: "Buscar",
-          tabBarActiveTintColor: '#000',
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="skyatlas" color={color} />
           ),
@@ -58,9 +65,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="calculadora/index"
         options={{
-          headerShown: true,
           title: "Calculadora",
-          tabBarActiveTintColor: '#000',
+          headerTitleStyle: {
+            fontFamily: 'PTSerif-Bold',
+            fontSize: 23,
+          },
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="calculator" color={color} />
           ),
@@ -79,11 +88,32 @@ export default function TabLayout() {
         }} />
 
       <Tabs.Screen
+        name="aqi_in/index"
+        options={{
+          headerShown: true,
+          title: "Calidad del Aire (aqi.in)",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="leaf" color={color} />
+          ),
+          tabBarButton: (props) => {
+            return (
+              <Pressable
+                {...props}
+                android_ripple={{ color: '#6c757d', borderless: true }}
+                onPress={() => {
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                  (props.onPress as any)();
+                }}
+              />
+            );
+          },
+        }} />
+      
+      <Tabs.Screen
         name="informacion"
         options={{
           headerShown: false,
           title: "Más información",
-          tabBarActiveTintColor: '#000',
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="info" color={color} />
           ),
@@ -101,6 +131,7 @@ export default function TabLayout() {
           },
         }} />
 
+      
 
 
 

@@ -6,9 +6,9 @@ import Calculadora from '../../../../componentes/Elementos/Calculadora'
 
 const index = () => {
   return (
-    <View className='justify-center items-center mt-10'>
+    <View className='justify-center items-center mt-5'>
       <Text className='font-[PTSerif-Bold] text-2xl text-center'>
-        Ingresa los datos obtenidos en tu monitor
+        Datos obtenidos en tu monitor
       </Text>
 
       {/* calculadoraCard */}

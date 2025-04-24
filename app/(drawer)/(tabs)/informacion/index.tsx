@@ -1,12 +1,10 @@
 //cspell:disable
 import { View, Text, Pressable } from "react-native";
 import React from "react";
-import { Stack, router } from "expo-router";
+import { router } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
 
-export const unstable_settings = {
-  initialRouteName: "index",
-};
+
 
 export default function IndexScreen() {
   return (
@@ -109,14 +107,14 @@ export default function IndexScreen() {
           </View>
         </View>
 
-        <View className="items-center mb-1">
+        {/* <View className="items-center mb-1">
           <Pressable
             className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"       >
             <Text className="text-3xl font-[PTSerif-Bold">
               Recomendaciones generales
             </Text>
           </Pressable>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );

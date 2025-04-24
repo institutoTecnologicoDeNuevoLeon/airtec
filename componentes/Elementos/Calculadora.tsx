@@ -11,7 +11,7 @@ const Calculadora = () => {
     return (
         // contenedor principal
 
-        <ScrollView>
+        <ScrollView >
             <ContaminanteCard tipo="PM2.5" placeholder="Ingresa el valor PM2.5" />
             <ContaminanteCard tipo="PM10" placeholder="Ingresa el valor PM10" />
             <ContaminanteCard tipo="SO2" placeholder="Ingresa el valor SO2" />
