@@ -6,7 +6,6 @@ import { Slot } from "expo-router";
 import "../global";
 import { useFonts } from "expo-font";
 import LottieView from "lottie-react-native";
-import * as SplashScreen from "expo-splash-screen";
 
 
 const _layout = () => {

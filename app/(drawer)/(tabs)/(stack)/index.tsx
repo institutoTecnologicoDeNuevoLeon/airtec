@@ -1,6 +1,6 @@
 //cspell:disable
 import React, { useState } from "react";
-import { View, Text, ActivityIndicator, ScrollView, Button, Pressable } from "react-native";
+import { View, Text, ActivityIndicator, ScrollView, Button, Pressable, ImageBackground } from "react-native";
 import { useAirQuality } from "../../../../componentes/useAirQuality";
 import DefinirHora from "../../../../componentes/DefinirHora";
 import Weathercard from "../../../../componentes/cardsInformation/Weathercard";
@@ -66,7 +66,12 @@ const Index = () => {
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <View className="flex-1 justify-center items-center">
+      <View
+        // source={require('../../../../assets/images/fondos/ghibiTec.png')}
+        className="flex-1 justify-center items-center">
+
+        {/* <View style={{ backgroundColor: 'rgba(255,255,255,0.8)', position: 'absolute',top: 0,left: 0, right: 0, bottom: 0, }}/> */}
+
         <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
           Guadalupe
         </Text>

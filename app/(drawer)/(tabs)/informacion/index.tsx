@@ -12,109 +12,82 @@ export default function IndexScreen() {
       <View className="mt-5">
         <View className="items-center mb-1">
           <Pressable
-            className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"
+            className="p-3 px-5 rounded-2xl bg-fondo6 border-2 border-fondo7 elevation-2xl"
             onPress={() => router.push("/informacion/AqiUsScreen")}
           >
-            <Text className="text-3xl font-[PTSerif-Bold">Valores AQI(US)</Text>
+            <Text className="text-3xl font-[PTSerif-Bold] text-white tracking-extra">Valores AQI(US)</Text>
           </Pressable>
         </View>
+{/* --------------------------------------------------------------------------------------- */}
+{/* --------------------------------------------------------------------------------------- */}
+{/* --------------------------------------------------------------------------------------- */}
+{/* --------------------------------------------------------------------------------------- */}
 
-        <View style={{ width: "100%" }}>
-          <View className="flex-row p-5 pt-1">
-            {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
-              <Pressable>
-                <Text
-                  className="text-xl font-[PTSerif-Bold]"
-                  onPress={() => router.push("/informacion/AqiPm25Screen")}
-                >
-                  AQIUS con PM2.5
-                </Text>
-              </Pressable>
-            </View>
 
-            {/* Separador blanco de 8px */}
-            <View style={{ width: 8, backgroundColor: "white" }} />
+        <View className="flex-row items-center justify-center my-5">
 
-            {/* Derecha: PM10 */}
-            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
-              <Pressable
-                onPress={() => router.push("/informacion/AqiPm10Screen")}
-              >
-                <Text className="text-xl font-[PTSerif-Bold]">
-                  AQIUS con PM10
-                </Text>
-              </Pressable>
-            </View>
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiPm25Screen")}
+              className="p-3 px-5 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                PM2.5
+              </Text>
+            </Pressable>
+          </View>
+
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiPm10Screen")}
+              className="p-3 px-5 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                PM10
+              </Text>
+            </Pressable>
+
+          </View>
+
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiSo2Screen")}
+              className="p-3 px-8 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                SO₂
+              </Text>
+            </Pressable>
+
           </View>
         </View>
 
-        <View style={{ width: "100%" }}>
-          <View className="flex-row p-5 pt-1">
-            {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
-              <Pressable
-                onPress={() => router.push("/informacion/AqiSo2Screen")}
-              >
-                <Text className="text-xl font-[PTSerif-Bold]">
-                  AQIUS con SO₂
-                </Text>
-              </Pressable>
-            </View>
+        <View className="flex-row items-center justify-center">
 
-            {/* Separador blanco de 8px */}
-            <View style={{ width: 8, backgroundColor: "white" }} />
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiNo2Screen")}
+              className="p-3 px-8 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                NO2
+              </Text>
+            </Pressable>
+          </View>
 
-            {/* Derecha: NO2 */}
-            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
-              <Pressable
-                onPress={() => router.push("/informacion/AqiNo2Screen")}
-              >
-                <Text className="text-xl font-[PTSerif-Bold]">
-                  AQIUS con NO₂
-                </Text>
-              </Pressable>
-            </View>
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiO3Screen")}
+              className="p-3 px-9 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                O3
+              </Text>
+            </Pressable>
+
+          </View>
+
+          <View className="flex-1 items-center">
+            <Pressable onPress={() => router.push("/informacion/AqiCoScreen")}
+              className="p-3 px-9 rounded-3xl bg-fondo2 border-2 border-fondo7 elevation-2xl">
+              <Text className="text-xl font-[PTSerif-Bold] text-white tracking-extra">
+                CO
+              </Text>
+            </Pressable>
+
           </View>
         </View>
-
-        <View style={{ width: "100%" }}>
-          <View className="flex-row p-5 pt-1">
-            {/* Izquierda: PM2.5 */}
-            <View className="flex-1 items-center bg-tercero justify-center h-32 rounded-lg">
-              <Pressable
-                onPress={() => router.push("/informacion/AqiO3Screen")}
-              >
-                <Text className="text-xl font-[PTSerif-Bold]">
-                  AQIUS con O₃
-                </Text>
-              </Pressable>
-            </View>
-
-            {/* Separador blanco de 8px */}
-            <View style={{ width: 8, backgroundColor: "white" }} />
-
-            {/* Derecha: PM10 */}
-            <View className="flex-1 items-center bg-primary justify-center h-32 rounded-lg">
-              <Pressable
-                onPress={() => router.push("/informacion/AqiCoScreen")}
-              >
-                <Text className="text-xl font-[PTSerif-Bold]">
-                  AQIUS con CO
-                </Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-
-        {/* <View className="items-center mb-1">
-          <Pressable
-            className="w-11/12 py-16 bg-slate-300 rounded-lg items-center"       >
-            <Text className="text-3xl font-[PTSerif-Bold">
-              Recomendaciones generales
-            </Text>
-          </Pressable>
-        </View> */}
+        
       </View>
     </ScrollView>
   );

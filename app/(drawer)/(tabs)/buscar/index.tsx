@@ -91,7 +91,7 @@ const Consulta = () => {
               className='p-4 px-6 rounded-3xl bg-fondo2 m-3 shadow-lg shadow-black
                       border-2 border-fondo7 elevation-2xl'
               onPress={() => router.push('/buscar/Estados')}>
-              <Text className='font-[PTSerif-Regular] text-xl text-white tracking-maxExtra'>Estados</Text>
+              <Text className='font-[PTSerif-Regular] text-2xl text-white tracking-maxExtra'>Estados</Text>
             </Pressable>
           </View>
           <View className='flex-1 items-center justify-center'>
@@ -99,7 +99,7 @@ const Consulta = () => {
               className='p-4 px-6 rounded-3xl bg-fondo2 m-3 shadow-lg shadow-black
                       border-2 border-fondo7 elevation-2xl'
               onPress={() => router.push('/buscar/Ciudades')}>
-              <Text className='font-[PTSerif-Regular] text-xl text-white tracking-maxExtra'>Ciudades</Text>
+              <Text className='font-[PTSerif-Regular] text-2xl text-white tracking-maxExtra'>Ciudades</Text>
             </Pressable>
           </View>
 
@@ -107,7 +107,7 @@ const Consulta = () => {
 
 
 
-        <View className='flex-2 justify-center mt-8 px-16 py-3 border-2 border-fondo3 bg-fondo4 rounded-lg'>
+        <View className='flex-2 justify-center mt-8 px-16 py-3  bg-fondo8 rounded-lg'>
 
           <Text className='font-[PTSerif-Bold] tracking-extra text-xl'>País</Text>
           <TextInput

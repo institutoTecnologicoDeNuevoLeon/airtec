@@ -31,6 +31,7 @@ module.exports = {
         fondo5: '#1f7a8c',
         fondo6: '#6096ba',
         fondo7: '#023e8a',
+        fondo8: '#d7e3fc',
         
 
         boton: '#184e77',

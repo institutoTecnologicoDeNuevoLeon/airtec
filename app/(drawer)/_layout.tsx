@@ -1,5 +1,5 @@
 //cspell:disable
-import { View, Text, Touchable, TouchableOpacity, Image } from "react-native";
+import { View, Text, Touchable, TouchableOpacity, Image, Pressable } from "react-native";
 import React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from "expo-router/drawer";
@@ -17,10 +17,11 @@ const DrawerLayout = () => {
           drawerActiveBackgroundColor: "#dee2e6",
           drawerActiveTintColor: '#023e8a',
           headerTitleAlign: 'center',
-          headerTintColor: "#495057",
+          headerTintColor: "#e7ecef",
 
           headerStyle: {
-            backgroundColor: "#ced4da",
+            backgroundColor: "#2a6f97",
+
           },
 
           drawerStyle: {
@@ -30,21 +31,21 @@ const DrawerLayout = () => {
           headerTitleStyle: {
             fontFamily: "PTSerif-BoldItalic",
             fontSize: 25,
-            letterSpacing: 5,
+            letterSpacing: 8,
           },
 
           headerLeft: () => {
             const navigation = useNavigation();
             return (
-              <TouchableOpacity
+              <Pressable
                 onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-                style={{ marginLeft: 15 }}>
+                style={{ marginLeft: 20, paddingHorizontal: 5 }}>
                 {/* <Image 
                                     source={require('../../assets/images/menu-de-hamburguesas.png')}
                                     style={{width:30, height:30 }}
                                     /> */}
-                <Ionicons name="grid" size={24} color={"#495057"}></Ionicons>
-              </TouchableOpacity>
+                <Ionicons name="grid" size={24} color={"#e7ecef"}></Ionicons>
+              </Pressable>
             );
           },
         }}
