@@ -1,19 +1,25 @@
 //cspell:disable 
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import React from 'react'
-import { TextInput } from 'react-native-gesture-handler'
 import Calculadora from '../../../../componentes/Elementos/Calculadora'
 
 const index = () => {
   return (
-    <View className='justify-center items-center mt-5'>
-      <Text className='font-[PTSerif-Bold] text-2xl text-center'>
-        Datos obtenidos en tu monitor
-      </Text>
+    <ImageBackground
+      source={require('../../../../assets/images/fondos/fondo1.jpg')}
+      className="flex-1 justify-center items-center">
 
-      {/* calculadoraCard */}
-      <Calculadora/>
-    </View>
+      <View style={{ backgroundColor: 'rgba(255,255,255,0.85)', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, }} />
+
+      <View className='justify-center items-center mt-5'>
+        <Text className='font-[PTSerif-Bold] text-2xl text-center'>
+          Datos obtenidos en tu monitor
+        </Text>
+
+        {/* calculadoraCard */}
+        <Calculadora />
+      </View>
+    </ImageBackground>
   )
 }
 

@@ -7,6 +7,7 @@ export default function Layout() {
             initialRouteName="index"
             screenOptions={{
                 headerBackTitle: 'Regresar',
+                headerTitleAlign: 'center'
             }}
         >
             <Stack.Screen name="AqiUsScreen" options={{

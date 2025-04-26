@@ -66,13 +66,13 @@ const Index = () => {
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <View
-        // source={require('../../../../assets/images/fondos/ghibiTec.png')}
+      <ImageBackground
+         source={require('../../../../assets/images/fondos/fondo1.jpg')}
         className="flex-1 justify-center items-center">
 
-        {/* <View style={{ backgroundColor: 'rgba(255,255,255,0.8)', position: 'absolute',top: 0,left: 0, right: 0, bottom: 0, }}/> */}
+        <View style={{ backgroundColor: 'rgba(255,255,255,0.85)', position: 'absolute',top: 0,left: 0, right: 0, bottom: 0, }}/> 
 
-        <Text className="font-[PTSerif-Bold] text-3xl text-black p-2 tracking-extra">
+        <Text className="font-[PTSerif-Bold] text-4xl text-black p-2 tracking-extra">
           Guadalupe
         </Text>
 
@@ -115,7 +115,7 @@ const Index = () => {
         ) : (
           <Text className="text-lg"></Text>
         )}
-      </View>
+      </ImageBackground>
     </ScrollView>
   );
 };
