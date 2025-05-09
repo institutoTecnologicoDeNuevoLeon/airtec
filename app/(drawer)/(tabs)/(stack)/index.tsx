@@ -73,7 +73,7 @@ const Index = () => {
         <View style={{ backgroundColor: 'rgba(255,255,255,0.85)', position: 'absolute',top: 0,left: 0, right: 0, bottom: 0, }}/> 
 
         <Text className="font-[PTSerif-Bold] text-4xl text-black p-2 tracking-extra">
-          Guadalupe
+          Guadalupe, Nuevo León
         </Text>
 
         <Text className="text-sm">
