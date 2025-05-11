@@ -6,8 +6,8 @@ import { Pressable, TouchableOpacity, TouchableWithoutFeedback } from "react-nat
 
 export default function TabLayout() {
   return (
-    <Tabs 
-      screenOptions={{ 
+    <Tabs
+      screenOptions={{
         headerTitleAlign: 'center',
         headerShown: true,
         tabBarActiveTintColor: '#000',
@@ -16,7 +16,7 @@ export default function TabLayout() {
           fontFamily: 'PTSerif-Bold',
           fontSize: 24,
         }
-        }}>
+      }}>
       <Tabs.Screen
         name="(stack)/index"
         options={{
@@ -39,19 +39,29 @@ export default function TabLayout() {
         }}
       />
 
+      {/* 
+        Se estaba intentando hacer una pantalla de consulta por país, estado y ciudad, se puede mejorar */}
       <Tabs.Screen
         name="buscar"
         options={{
-          title: "Buscar",
-          headerShown: false,
+          tabBarItemStyle: { display: "none" }
+        }}
+      />
+
+
+      <Tabs.Screen
+        name="aqi_in/index"
+        options={{
+          headerShown: true,
+          title: "Calidad del Aire (aqi.in)",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="skyatlas" color={color} />
+            <FontAwesome size={28} name="leaf" color={color} />
           ),
           tabBarButton: (props) => {
             return (
               <Pressable
-                android_ripple={{ color: '#6c757d', borderless: true }}
                 {...props}
+                android_ripple={{ color: '#6c757d', borderless: true }}
                 onPress={() => {
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                   (props.onPress as any)();
@@ -59,8 +69,7 @@ export default function TabLayout() {
               />
             );
           },
-        }}
-      />
+        }} />
 
       <Tabs.Screen
         name="calculadora/index"
@@ -88,28 +97,6 @@ export default function TabLayout() {
         }} />
 
       <Tabs.Screen
-        name="aqi_in/index"
-        options={{
-          headerShown: true,
-          title: "Calidad del Aire (aqi.in)",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="leaf" color={color} />
-          ),
-          tabBarButton: (props) => {
-            return (
-              <Pressable
-                {...props}
-                android_ripple={{ color: '#6c757d', borderless: true }}
-                onPress={() => {
-                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                  (props.onPress as any)();
-                }}
-              />
-            );
-          },
-        }} />
-      
-      <Tabs.Screen
         name="informacion"
         options={{
           headerShown: false,
@@ -131,7 +118,7 @@ export default function TabLayout() {
           },
         }} />
 
-      
+
 
 
 

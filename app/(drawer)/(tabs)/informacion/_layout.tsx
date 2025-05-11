@@ -54,6 +54,16 @@ export default function Layout() {
                 headerTitle: 'CO a AQI(US)',
                 headerBackTitle: 'Regresar',
             }} />
+            
+            <Stack.Screen name="recomendations" options={{
+                headerTitle: 'Recomendaciones',
+                headerBackTitle: 'Regresar',
+            }} />
+
+            <Stack.Screen name="actAireLibre" options={{
+                headerTitle: 'Ejercicio',
+                headerBackTitle: 'Regresar',
+            }} />
 
         </Stack>
     );

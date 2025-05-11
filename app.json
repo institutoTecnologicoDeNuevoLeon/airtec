@@ -6,12 +6,12 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/iconosClima/aire-limpio.png",
-    "userInterfaceStyle": "ligth",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/iconosClima/aire-limpio.png",
       "resizeMode": "contain",
-      "backgroundColor": "#fff"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
