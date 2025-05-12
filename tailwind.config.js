@@ -31,7 +31,10 @@ module.exports = {
         fondo5: '#1f7a8c',
         fondo6: '#6096ba',
         fondo7: '#023e8a',
+        'fondo7-70': 'rgba(2, 62, 138, 0.10)',
         fondo8: '#d7e3fc',
+        fondo9: '#CAE9FF',
+        'fondo9-70': 'rgba(202, 233, 255, 0.6)',
 
         fondoSticky: '#fcefb4',
         fondoSticky2: '#a2d6f9',

@@ -1,30 +1,36 @@
 //cspell:disable
-import React, { useState } from "react";
-import { View, Text, ActivityIndicator, ScrollView, Button, Pressable, ImageBackground } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  ScrollView,
+  Pressable,
+  ImageBackground,
+} from "react-native";
+import { Picker } from "@react-native-picker/picker";
 import { useAirQuality } from "../../../../componentes/useAirQuality";
 import DefinirHora from "../../../../componentes/DefinirHora";
 import Weathercard from "../../../../componentes/cardsInformation/Weathercard";
 import AirQualityCard from "../../../../componentes/cardsInformation/AirQualityCard";
+import { ciudadesEstados } from "../../../../aqiTool/localidadesMexico";
 
 const Index = () => {
-  const city = "Guadalupe";
-  const state = "Nuevo Leon";
-  const country = "Mexico";
+  const [state, setState] = useState("Nuevo Leon");
+  const [city, setCity] = useState("Guadalupe");
+  const [shouldFetch, setShouldFetch] = useState(true); // primera carga
 
-  const [shouldFetch, setShouldFetch] = useState(false);
+  const { data, loading } = useAirQuality(city, state, "Mexico", shouldFetch);
 
-  const { data, loading } = useAirQuality(city, state, country, shouldFetch);
+  // Resetea el trigger después de cargar
+  useEffect(() => {
+    if (!loading && shouldFetch) {
+      setShouldFetch(false);
+    }
+  }, [loading, shouldFetch]);
 
-  if (shouldFetch && data && !loading) {
-    setShouldFetch(false);
-  }
+  const ciudadesDisponibles = ciudadesEstados[state] || [];
 
-  const handleFetchData = () => {
-    setShouldFetch(true);
-  };
-
-  //const vAquiUs = 43;
-  //const vAquiUs = 180;
   const vAquiUs = data?.current?.pollution?.aqius;
   const temperatura = data?.current?.weather.tp;
   const hora = data?.current?.weather.ts;
@@ -67,13 +73,43 @@ const Index = () => {
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <ImageBackground
-         source={require('../../../../assets/images/fondos/fondo1.jpg')}
-        className="flex-1 justify-center items-center">
+        source={require('../../../../assets/images/fondos/fondo1.jpg')}
+        className="flex-1 justify-center items-center"
+      >
+        <View style={{
+          backgroundColor: 'rgba(255,255,255,0.85)',
+          position: 'absolute',
+          top: 0, left: 0, right: 0, bottom: 0
+        }} />
 
-        <View style={{ backgroundColor: 'rgba(255,255,255,0.85)', position: 'absolute',top: 0,left: 0, right: 0, bottom: 0, }}/> 
+        {/* Dropdowns */}
+        <View className="w-[90%] bg-white p-4 mt-4 rounded-2xl shadow-md">
+          <Text className="text-lg font-semibold mb-2">Selecciona el estado</Text>
+          <Picker
+            selectedValue={state}
+            onValueChange={(value) => {
+              setState(value);
+              setCity(ciudadesEstados[value][0]);
+            }}
+          >
+            {Object.keys(ciudadesEstados).map((estado) => (
+              <Picker.Item label={estado} value={estado} key={estado} />
+            ))}
+          </Picker>
+
+          <Text className="text-lg font-semibold mt-4 mb-2">Selecciona la ciudad</Text>
+          <Picker
+            selectedValue={city}
+            onValueChange={(value) => setCity(value)}
+          >
+            {ciudadesDisponibles.map((ciudad) => (
+              <Picker.Item label={ciudad} value={ciudad} key={ciudad} />
+            ))}
+          </Picker>
+        </View>
 
         <Text className="font-[PTSerif-Bold] text-4xl text-black p-2 tracking-extra">
-          Guadalupe
+          {city}
         </Text>
 
         <Text className="text-sm">
@@ -81,12 +117,11 @@ const Index = () => {
         </Text>
 
         <Pressable
-          className="px-5 py-3 rounded-3xl bg-fondo2 m-3 shadow-lg shadow-black
-                      border-2 border-fondo7 elevation-2xl"
-          onPress={handleFetchData}>
-          <Text className="text-2xl color-white font-[PTSerif-Regular] tracking-extra">Actualizar datos</Text>
+          className="px-5 py-3 rounded-3xl bg-fondo2 m-3 shadow-lg border-2 border-fondo7"
+          onPress={() => setShouldFetch(true)}
+        >
+          <Text className="text-2xl color-white font-[PTSerif-Regular]">Actualizar datos</Text>
         </Pressable>
-
 
         {loading ? (
           <View className="flex-1 justify-center items-center">
@@ -102,7 +137,6 @@ const Index = () => {
               sAquiUs={sAquiUs}
               vAquiUs={vAquiUs}
             />
-
             <View className="w-[90%] h-30 rounded-3xl mt-3 shadow-black shadow-md bg-white">
               <Weathercard
                 temperatura={temperatura}
@@ -113,7 +147,7 @@ const Index = () => {
             </View>
           </>
         ) : (
-          <Text className="text-lg"></Text>
+          <Text className="text-lg">No hay datos aún</Text>
         )}
       </ImageBackground>
     </ScrollView>

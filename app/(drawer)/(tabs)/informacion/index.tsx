@@ -119,52 +119,44 @@ export default function IndexScreen() {
 
 
           <View className="flex-row gap-x-4 my-5">
-            <View className="flex-1 h-48 bg-white rounded-3xl items-center justify-center border-l-2">
-              <Pressable
-                onPress={() => router.push("/informacion/recomendations")}
-              >
-                <Image
-                  className="w-24 h-24 p-4"
-                  source={require("../../../../assets/images/iconosGenerales/recomendaciones.png")}
-                ></Image>
-              </Pressable>
-              <Text className="mt-2 font-[PTSerif-Bold] text-base">
+            {/* Tarjeta 1 */}
+            <View className="flex-1 h-48 bg-fondo7-70 rounded-3xl border-2 px-3 py-3 justify-between">
+              <Text className="font-[PTSerif-Bold] text-xl text-center text-black tracking-extra">
                 Cuida tu salud
               </Text>
+              <Pressable onPress={() => router.push("/informacion/recomendations")} className="items-center">
+                <Image
+                  className="w-24 h-24"
+                  source={require("../../../../assets/images/iconosGenerales/recomendaciones.png")}
+                />
+              </Pressable>
             </View>
 
-            <View className="flex-1 h-48 bg-white rounded-3xl items-center justify-center border-l-2">
-              <Pressable onPress={() => router.push("/informacion/actAireLibre")}>
-                <Image
-                  className="w-24 h-24 p-4"
-                  source={require("../../../../assets/images/iconosGenerales/dumbell.png")}/>
-              </Pressable>
-              <Text className="mt-2 font-[PTSerif-Bold] text-base">
+            {/* Tarjeta 2 */}
+            <View className="flex-1 h-48 bg-fondo7-70 rounded-3xl border-2 px-3 py-3 justify-between">
+              <Text className="font-[PTSerif-Bold] text-xl text-center text-black tracking-extra">
                 Ejercicio
               </Text>
+              <Pressable onPress={() => router.push("/informacion/actAireLibre")} className="items-center">
+                <Image
+                  className="w-24 h-24"
+                  source={require("../../../../assets/images/iconosGenerales/dumbell.png")}
+                />
+              </Pressable>
             </View>
           </View>
 
 
-          <View className="flex-row gap-x-4">
-            <View className="flex-1 h-48 bg-white rounded-3xl items-center justify-center border-l-2">
-              <Pressable
-                onPress={() => router.push("/informacion/actAireLibre")}
-              >
-                <Image
-                  className="w-24 h-24 p-4"
-                  source={require("../../../../assets/images/iconosGenerales/dumbell.png")}
-                ></Image>
-              </Pressable>
-              <Text className="mt-2 font-[PTSerif-Bold] text-base">
-                Ejercicio
-              </Text>
-            </View>
 
-            <View className="flex-1 h-48 bg-white rounded-3xl items-center justify-center border-l-2">
+          <View className="justify-center items-center p-2 bg-white rounded-lg">
+            <Text className="font-bold text-lg">Paginas del gobierno de Nuevo León</Text>
+          </View>
+
+          <View className="flex-row gap-x-4">
+            <View className="flex-1 h-32 items-center justify-center">
               <Pressable
                 onPress={async () => {
-                  const url = "https://www.airnow.gov/aqi/";
+                  const url = "https://aire.nl.gob.mx/";
                   const supported = await Linking.canOpenURL(url);
                   if (supported) {
                     Linking.openURL(url);
@@ -174,13 +166,73 @@ export default function IndexScreen() {
                 }}
               >
                 <Image
-                  className="w-24 h-24 p-4"
-                  source={require("../../../../assets/images/iconosGenerales/flecha-correcta.png")}
+                  className="w-16 h-16"
+                  source={require("../../../../assets/images/iconosGenerales/enlace.png")}
                 ></Image>
               </Pressable>
-              <Text className="mt-2 font-[PTSerif-Bold] text-base">
-                AQI (AirNow)
-              </Text>
+            </View>
+
+            <View className="flex-1 h-32 items-center justify-center">
+              <Pressable
+                onPress={async () => {
+                  const url = "https://www.gob.mx/inecc";
+                  const supported = await Linking.canOpenURL(url);
+                  if (supported) {
+                    Linking.openURL(url);
+                  } else {
+                    Alert.alert("Error", "No se pudo abrir el enlace.");
+                  }
+                }}
+              >
+                <Image
+                  className="w-16 h-16"
+                  source={require("../../../../assets/images/iconosGenerales/enlace-externo.png")}
+                ></Image>
+              </Pressable>
+            </View>
+          </View>
+
+          <View className="justify-center items-center p-2 bg-white rounded-lg">
+            <Text className="font-bold text-lg">¡Siguenos en nuestras redes sociales!!</Text>
+          </View>
+
+          <View className="flex-row gap-x-4">
+            <View className="flex-1 h-48 items-center justify-center">
+              <Pressable
+                onPress={async () => {
+                  const url = "https://www.facebook.com/institutotecnologicodenuevoleon/?locale=es_LA";
+                  const supported = await Linking.canOpenURL(url);
+                  if (supported) {
+                    Linking.openURL(url);
+                  } else {
+                    Alert.alert("Error", "No se pudo abrir el enlace.");
+                  }
+                }}
+              >
+                <Image
+                  className="w-20 h-20 p-4"
+                  source={require("../../../../assets/images/iconosGenerales/facebook.png")}
+                ></Image>
+              </Pressable>
+            </View>
+
+            <View className="flex-1 h-48 items-center justify-center">
+              <Pressable
+                onPress={async () => {
+                  const url = "https://www.instagram.com/oficialtecnl/?hl=en";
+                  const supported = await Linking.canOpenURL(url);
+                  if (supported) {
+                    Linking.openURL(url);
+                  } else {
+                    Alert.alert("Error", "No se pudo abrir el enlace.");
+                  }
+                }}
+              >
+                <Image
+                  className="w-20 h-20 p-4"
+                  source={require("../../../../assets/images/iconosGenerales/instagram.png")}
+                ></Image>
+              </Pressable>
             </View>
           </View>
 

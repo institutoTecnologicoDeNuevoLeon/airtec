@@ -11,7 +11,7 @@ const AirQualityCard = ({ bgColour, iconos, iconAquiUS, sAquiUs, vAquiUs }) => {
         >
             <Image
                 source={iconos[iconAquiUS]}
-                style={{ width: 80, height: 80, marginTop: 10, marginBottom: 10,}} // ajusta los valores a tu gusto
+                style={{ width: 70, height: 70, marginTop: 10, marginBottom: 10, marginLeft: 18}} // ajusta los valores a tu gusto
             />
 
             <View className="flex-1 items-center">

@@ -34,7 +34,14 @@
         {
           "action": "VIEW",
           "data": {
-            "scheme": "https"
+            "scheme": "mailto"
+          },
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "geo"
           },
           "category": ["BROWSABLE", "DEFAULT"]
         }
@@ -45,6 +52,19 @@
       "bundler": "metro"
     },
     "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/iconosClima/aire-limpio.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/images/iconosClima/aire-limpio.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+          }
+        }
+      ],
       "expo-router",
       "expo-font"
     ],
@@ -58,3 +78,4 @@
     }
   }
 }
+
