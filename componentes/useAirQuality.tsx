@@ -1,12 +1,7 @@
 //cspell:disable
 import { useEffect, useState } from "react";
 
-export const useAirQuality = (
-  city: string,
-  state: string,
-  country: string,
-  shouldFetch: boolean
-) => {
+export const useAirQuality = (  city: string,  state: string, country: string,  shouldFetch: boolean) => {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 

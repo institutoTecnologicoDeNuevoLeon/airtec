@@ -51,18 +51,17 @@ const DrawerLayout = () => {
         }}
       >
         <Drawer.Screen
-          name="(tabs)" // This is the name of the page and must match the url from root
+          name="(tabs)" 
           options={{
             drawerLabel: "Inicio",
             title: "AirTec",
-            // drawerItemStyle: { display: 'none' },
             drawerIcon: ({ focused, size, color }) => (
               <Ionicons name="home" size={20} style={{ paddingLeft: 2 }} color={focused ? '#023e8a' : '#0096c7'}></Ionicons>
             ),
           }}
         />
         <Drawer.Screen
-          name="acerca/index" // This is the name of the page and must match the url from root
+          name="acerca/index" 
           options={{
             drawerLabel: "Acerca",
             title: "Acerca",
@@ -71,9 +70,8 @@ const DrawerLayout = () => {
             ),
           }}
         />
-
         <Drawer.Screen
-          name="contacto/index" // This is the name of the page and must match the url from root
+          name="contacto/index" 
           options={{
             drawerLabel: "Ayuda",
             title: "Ayuda",

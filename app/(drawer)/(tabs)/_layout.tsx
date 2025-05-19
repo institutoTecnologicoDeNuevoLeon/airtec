@@ -17,6 +17,7 @@ export default function TabLayout() {
           fontSize: 24,
         }
       }}>
+        
       <Tabs.Screen
         name="(stack)/index"
         options={{
@@ -39,18 +40,14 @@ export default function TabLayout() {
         }}
       />
 
-      {/* 
-        Se estaba intentando hacer una pantalla de consulta por país, estado y ciudad, se puede mejorar */}
-      <Tabs.Screen
-        name="buscar"
+      {/* Se estaba intentando hacer una pantalla de consulta por país, estado y ciudad, se puede mejorar */}
+      <Tabs.Screen name="buscar"
         options={{
           tabBarItemStyle: { display: "none" }
         }}
       />
 
-
-      <Tabs.Screen
-        name="aqi_in/index"
+      <Tabs.Screen name="aqi_in/index"
         options={{
           headerShown: true,
           title: "Calidad del Aire (aqi.in)",
@@ -71,8 +68,7 @@ export default function TabLayout() {
           },
         }} />
 
-      <Tabs.Screen
-        name="calculadora/index"
+      <Tabs.Screen name="calculadora/index"
         options={{
           title: "Calculadora",
           headerTitleStyle: {
@@ -96,8 +92,7 @@ export default function TabLayout() {
           },
         }} />
 
-      <Tabs.Screen
-        name="informacion"
+      <Tabs.Screen name="informacion"
         options={{
           headerShown: false,
           title: "Más información",
@@ -115,12 +110,7 @@ export default function TabLayout() {
                 }}
               />
             );
-          },
-        }} />
-
-
-
-
+          }, }} />
 
     </Tabs>
   );

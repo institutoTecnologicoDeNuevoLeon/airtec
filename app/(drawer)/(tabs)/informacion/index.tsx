@@ -219,7 +219,7 @@ export default function IndexScreen() {
             <View className="flex-1 h-48 items-center justify-center">
               <Pressable
                 onPress={async () => {
-                  const url = "https://www.instagram.com/oficialtecnl/?hl=en";
+                  const url = "https://instagram.com/oficialtecnl";;
                   const supported = await Linking.canOpenURL(url);
                   if (supported) {
                     Linking.openURL(url);
