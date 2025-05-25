@@ -2,7 +2,6 @@
   "expo": {
     "name": "Airtec",
     "slug": "clima-04",
-    "owner": "tecnologico_de_nuevo_leon",
     "scheme": "climaapp",
     "version": "1.0.0",
     "orientation": "portrait",

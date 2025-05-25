@@ -11,14 +11,14 @@ const AirQualityCard = ({ bgColour, iconos, iconAquiUS, sAquiUs, vAquiUs }) => {
         >
             <Image
                 source={iconos[iconAquiUS]}
-                style={{ width: 70, height: 70, marginTop: 10, marginBottom: 10, marginLeft: 18}} // ajusta los valores a tu gusto
+                className="w-14 h-14 mt-4 mb-4 ml-10" // ajusta los valores a tu gusto
             />
 
             <View className="flex-1 items-center">
-                <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
+                <Text className="font-[PTSerif-Bold] text-xl tracking-minExtra">
                     Calidad: {sAquiUs}
                 </Text>
-                <Text className="font-[PTSerif-Bold] text-2xl tracking-minExtra">
+                <Text className="font-[PTSerif-Bold] text-xl tracking-minExtra">
                     Valor AQI US: {vAquiUs}
                 </Text>
             </View>

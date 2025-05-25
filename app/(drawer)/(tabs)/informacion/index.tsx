@@ -193,7 +193,7 @@ export default function IndexScreen() {
           </View>
 
           <View className="justify-center items-center p-2 bg-white rounded-lg">
-            <Text className="font-bold text-lg">¡Siguenos en nuestras redes sociales!!</Text>
+            <Text className="font-bold text-lg">¡Revisa nuestras paginas oficiales!</Text>
           </View>
 
           <View className="flex-row gap-x-4">
@@ -219,7 +219,7 @@ export default function IndexScreen() {
             <View className="flex-1 h-48 items-center justify-center">
               <Pressable
                 onPress={async () => {
-                  const url = "https://instagram.com/oficialtecnl";;
+                  const url = "http://nuevoleon.tecnm.mx/";;
                   const supported = await Linking.canOpenURL(url);
                   if (supported) {
                     Linking.openURL(url);
@@ -229,8 +229,8 @@ export default function IndexScreen() {
                 }}
               >
                 <Image
-                  className="w-20 h-20 p-4"
-                  source={require("../../../../assets/images/iconosGenerales/instagram.png")}
+                  className="w-20 h-20 p-4 rounded-full"
+                  source={require("../../../../assets/images/itnl/acercaDe.png")}
                 ></Image>
               </Pressable>
             </View>

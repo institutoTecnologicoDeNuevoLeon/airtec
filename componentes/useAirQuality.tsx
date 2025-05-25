@@ -10,7 +10,7 @@ export const useAirQuality = (  city: string,  state: string, country: string,  
       setLoading(true);
       try {
         const response = await fetch(
-          `https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=f89a2676-ac48-455b-bcf0-c75157a9a630`
+          `https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=08692d60-166a-41f3-afe7-cc4c4825e190`
         );
         const json = await response.json();
         console.log(json);

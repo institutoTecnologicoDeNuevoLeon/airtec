@@ -1,7 +1,7 @@
 //cspell:disable 
 import { View, Text, ImageBackground } from 'react-native'
 import React from 'react'
-import Calculadora from '../../../../componentes/Elementos/Calculadora'
+import Calculadora2 from '../../../../componentes/Elementos/Calculadora2'
 
 const index = () => {
   return (
@@ -12,12 +12,10 @@ const index = () => {
       <View style={{ backgroundColor: 'rgba(255,255,255,0.85)', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, }} />
 
       <View className='justify-center items-center mt-5'>
-        <Text className='font-[PTSerif-Bold] text-2xl text-center'>
-          Datos obtenidos en tu monitor
-        </Text>
+        
 
         {/* calculadoraCard */}
-        <Calculadora />
+        <Calculadora2 />
       </View>
     </ImageBackground>
   )

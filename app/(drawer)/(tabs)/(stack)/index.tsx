@@ -17,7 +17,7 @@ import { ciudadesEstados } from "../../../../aqiTool/localidadesMexico";
 
 const Index = () => {
   const [state, setState] = useState("Nuevo Leon");
-  const [city, setCity] = useState("Guadalupe");
+  const [city, setCity] = useState("Monterrey");
   const [shouldFetch, setShouldFetch] = useState(true); // primera carga
 
   const { data, loading } = useAirQuality(city, state, "Mexico", shouldFetch);
