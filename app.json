@@ -14,7 +14,10 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "permissions": ["INTERNET"],
@@ -45,7 +48,8 @@
           },
           "category": ["BROWSABLE", "DEFAULT"]
         }
-      ]
+      ],
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/images/iconosClima/luna-llena.png",
@@ -73,9 +77,12 @@
         "origin": false
       },
       "eas": {
-        "projectId": "fa9d4040-8189-4cf5-850d-b351803de433"
+        "projectId": "3178ab1a-bf16-40c2-8071-d54d483dd0c7"
       }
+    },
+    "owner": "tecnologico_de_nuevo_leon",
+    "updates": {
+      "url": "https://u.expo.dev/3178ab1a-bf16-40c2-8071-d54d483dd0c7"
     }
   }
 }
-
