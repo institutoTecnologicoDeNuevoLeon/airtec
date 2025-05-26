@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/images/iconosClima/aire-limpio.png",
         "backgroundColor": "#34a0a4"
       },
-      "package": "com.milo940707.clima04",
+      "package": "com.airtec.app",
       "intentFilters": [
         {
           "action": "VIEW",
