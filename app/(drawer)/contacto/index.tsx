@@ -59,7 +59,7 @@ const Contacto = () => {
         <TouchableOpacity onPress={openEmail} className="flex-row items-center pb-5">
           <Ionicons name="mail-outline" size={24} color="#444" className="mr-4" />
           <Text className="text-lg text-black">
-            {'\u2022'} l20481161@nuevoleon.tecnm.mx {'\n'}
+            {'\u2022'} tecnl.airtec@gmail.com {'\n'}
             {'\u2022'} norma.vh@nuevoleon.tecnm.mx
           </Text>
           <Ionicons name="arrow-undo-outline" size={24} color="#274c77" className="mr-4 ml-2" />
