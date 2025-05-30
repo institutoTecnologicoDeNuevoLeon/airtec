@@ -4,22 +4,22 @@ import React from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const actividadFisica = [
-    "¡Es un día excelente para realizar actividades al aire libre!",
+    "•¡Es un día excelente para realizar actividades al aire libre!",
 
-    "¡Es un buen día para realizar actividades al aire libre! \n" +
-    "Los alumnos que son excepcionalmente sensibles a la contaminación atmosférica podrían presentar síntomas",
+    "•¡Es un buen día para realizar actividades al aire libre! \n \n" +
+    "•Los alumnos que son excepcionalmente sensibles a la contaminación atmosférica podrían presentar síntomas",
 
-    "Es aceptable realizar actividades al aire libre, en especial actividades breves como el recreo y la educación física.\n" +
-    "Para actividades más prolongadas como prácticas deportivas, descansar más a menudo y realizar actividades menos intensas \n" +
-    "Prestar atención a la aparición de síntomas y tomar medidas según sea necesario.\n" +
-    "Los alumnos asmáticos deben seguir sus planes de acción para el asma y tener a mano medicamentos de acción rápida",
+    "•Es aceptable realizar actividades al aire libre, en especial actividades breves como el recreo y la educación física.\n \n" +
+    "•Para actividades más prolongadas como prácticas deportivas, descansar más a menudo y realizar actividades menos intensas \n \n" +
+    "•Prestar atención a la aparición de síntomas y tomar medidas según sea necesario.\n \n" +
+    "•Los alumnos asmáticos deben seguir sus planes de acción para el asma y tener a mano medicamentos de acción rápida",
 
-    "Para todas las actividades al aire libre descansar más a menudo y realizar actividades menos intensas.\n" +
-    "Tener en cuenta la posibilidad de realizar las actividades más prolongadas o más intensas adentro o reprogramarlas a otro día o a otra hora.\n" +
-    "Prestar atención a la aparición de síntomas y tomar medidas según sea necesario\n" +
-    "Los alumnos asmáticos deben seguir sus planes de acción para el asma y tener a mano medicamentos de acción rápida",
+    "•Para todas las actividades al aire libre descansar más a menudo y realizar actividades menos intensas.\n \n" +
+    "•Tener en cuenta la posibilidad de realizar las actividades más prolongadas o más intensas adentro o reprogramarlas a otro día o a otra hora.\n \n" +
+    "•Prestar atención a la aparición de síntomas y tomar medidas según sea necesario\n \n" +
+    "•Los alumnos asmáticos deben seguir sus planes de acción para el asma y tener a mano medicamentos de acción rápida",
 
-    "Trasladar todas las actividades adentro o reprogramarlas a otro día."
+    "•Trasladar todas las actividades adentro o reprogramarlas a otro día."
 ]
 
 const coloresDeFondo = [
@@ -36,6 +36,9 @@ const actAireLibre = () => {
         <ScrollView contentContainerStyle={{ alignItems: 'center', paddingVertical: 15 }}>
             <Text className='text-center text-xl font-bold mb-5'>
                 ¿Actividad física al aire libre?
+            </Text>
+            <Text className='text-center text-lg mb-5'>
+                Confirma el color AQI y toma tu decisión
             </Text>
             {actividadFisica.map((item, index) => (
                 <View

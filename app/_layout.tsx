@@ -1,11 +1,5 @@
 //cspell:disable
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  ImageBackground,
-  useColorScheme,
-} from "react-native";
+import { View, Text, ActivityIndicator, ImageBackground, useColorScheme, } from "react-native";
 import React, { useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Slot } from "expo-router";
