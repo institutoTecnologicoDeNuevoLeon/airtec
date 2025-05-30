@@ -10,7 +10,8 @@ const index = () => {
     // <Redirect href={'./(drawer)/(tabs)/informacion/recomendations'} />
     // <Redirect href={'./(drawer)/(tabs)/informacion/actAireLibre'} />
     //<Redirect href={'./(drawer)/(tabs)/informacion'}/>
-    <Redirect href={'./(drawer)/(tabs)/(stack)'} />
+    //<Redirect href={'./(drawer)/(tabs)/(stack)'} />
+    <Redirect href={'./(drawer)/(tabs)/calculadora'} />
     
 
   )

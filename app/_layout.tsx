@@ -55,13 +55,11 @@ const _layout = () => {
           style={{ width: 120, height: 120 }}
         />
         <View
-          className="items-center p-2 rounded-2xl"
+          className="items-center justify-center p-2 rounded-2xl w-60 h-24"
           style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
         >
-          <Text className="font-[PTSerif-BoldItalic] mt-1 text-3xl">AirTec</Text>
-          <Text className="font-[PTSerif-BoldItalic] mt-1 text-xl">
-            Institulo Tecnológico de Nuevo León
-          </Text>
+          <Text className="font-[PTSerif-BoldItalic] mt-1 text-3xl mx-4"> AirTec </Text>
+          <Text className="font-[PTSerif-BoldItalic] mt-1 text-base mx-4"> TECNL </Text>
         </View>
       </ImageBackground>
     );

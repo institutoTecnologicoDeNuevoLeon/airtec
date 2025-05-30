@@ -17,7 +17,7 @@ import { ciudadesEstados } from "../../../../aqiTool/localidadesMexico";
 
 const Index = () => {
   const [state, setState] = useState("Nuevo Leon");
-  const [city, setCity] = useState("Monterrey");
+  const [city, setCity] = useState("Guadalupe");
   const [shouldFetch, setShouldFetch] = useState(true); // primera carga
 
   const { data, loading } = useAirQuality(city, state, "Mexico", shouldFetch);
@@ -71,7 +71,7 @@ const Index = () => {
   }
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <ScrollView contentContainerStyle={{ flexGrow: 1,}}>
       <ImageBackground
         source={require('../../../../assets/images/fondos/fondo1.jpg')}
         className="flex-1 justify-center items-center"
@@ -108,7 +108,7 @@ const Index = () => {
           </Picker>
         </View>
 
-        <Text className="font-[PTSerif-Bold] text-4xl text-black p-2 tracking-extra">
+        <Text className="font-[PTSerif-Bold] text-4xl color-letras p-2 tracking-extra mt-5">
           {city}
         </Text>
 

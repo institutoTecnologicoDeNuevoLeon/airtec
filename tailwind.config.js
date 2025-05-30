@@ -40,6 +40,8 @@ module.exports = {
         fondoSticky2: '#a2d6f9',
         fondoSticky3: '#ffd6ff',
 
+        letras: '#4a4e69',
+
         boton: '#184e77',
         boton2: '#e7ecef',
 
