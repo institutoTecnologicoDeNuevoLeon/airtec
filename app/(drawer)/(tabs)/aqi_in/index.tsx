@@ -1,13 +1,22 @@
 //cspell:disable 
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ActivityIndicator, Text, Pressable } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Text, Pressable, Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Ionicons } from '@expo/vector-icons';
+import * as Location from 'expo-location'; // 👈 NUEVO
 
 export default function WebTab() {
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(false);
     const [reintentos, setReintentos] = useState(0);
+    const [permisoUbicacion, setPermisoUbicacion] = useState(null); // 👈 NUEVO
+
+    useEffect(() => {
+        (async () => {
+            const { status } = await Location.requestForegroundPermissionsAsync(); // 👈 NUEVO
+            setPermisoUbicacion(status === 'granted'); // 👈 NUEVO
+        })();
+    }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -15,7 +24,7 @@ export default function WebTab() {
                 setError(true);
                 setCargando(false);
             }
-        }, 90000); 
+        }, 90000);
 
         return () => clearTimeout(timer);
     }, [reintentos]);
@@ -23,8 +32,17 @@ export default function WebTab() {
     const handleReload = () => {
         setError(false);
         setCargando(true);
-        setReintentos(prev => prev + 1); // Forzar recarga
+        setReintentos(prev => prev + 1);
     };
+
+    if (permisoUbicacion === false) {
+        return (
+            <View style={styles.errorContainer}>
+                <Ionicons name="location-outline" size={40} color="orange" />
+                <Text style={styles.errorText}>La app necesita acceso a tu ubicación para mostrar la calidad del aire de tu zona.</Text>
+            </View>
+        );
+    }
 
     return (
         <View style={styles.container}>
@@ -41,13 +59,14 @@ export default function WebTab() {
                 <>
                     <WebView
                         key={reintentos}
-                            source={{ uri: 'https://www.aqi.in/dashboard/mexico/nuevo-leon/guadalupe' }}
+                        source={{ uri: 'https://www.aqi.in/dashboard/mexico/nuevo-leon' }} // 👈 QUITA "guadalupe"
                         style={{ flex: 1 }}
                         onLoadEnd={() => setCargando(false)}
                         onError={() => {
                             setError(true);
                             setCargando(false);
                         }}
+                        geolocationEnabled={true} // 👈 PERMITE USO DE GPS EN WEBVIEW
                     />
                     {cargando && (
                         <View style={styles.loader}>

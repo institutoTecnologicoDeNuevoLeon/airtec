@@ -20,7 +20,7 @@
       }
     },
     "android": {
-      "permissions": ["INTERNET"],
+      "permissions": ["INTERNET", "ACCESS_FINE_LOCATION"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/iconosClima/aire-limpio.png",
         "backgroundColor": "#34a0a4"
